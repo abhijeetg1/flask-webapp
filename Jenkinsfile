@@ -31,8 +31,12 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d --name $CONTAINER_NAME -p $APP_PORT:$APP_PORT $IMAGE_NAME'
-            }
+                sh '''
+                docker stop flask-webapp-container || true
+                docker rm flask-webapp-container || true
+                docker run -d --name flask-webapp-container -p 5000:5000 flask-webapp
+                '''
+    }
         }
     }
 }
