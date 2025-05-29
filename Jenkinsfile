@@ -11,6 +11,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/abhijeetg1/flask-webapp.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/abhijeetg1/flask-webapp.git']])
             }
         }
 
