@@ -129,7 +129,3 @@ docker rmi flask-webapp
 DevOps Engineer | AWS | Jenkins | Docker | Python
 
 ---
-
-## 📃 License
-
-MIT License
